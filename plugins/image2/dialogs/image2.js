@@ -495,9 +495,7 @@ CKEDITOR.dialog.add( 'image2', function( editor ) {
 								id: 'align',
 								type: 'radio',
 								items: [
-									[ commonLang.alignNone, 'none' ],
 									[ commonLang.alignLeft, 'left' ],
-									[ commonLang.alignCenter, 'center' ],
 									[ commonLang.alignRight, 'right' ]
 								],
 								label: commonLang.align,
@@ -505,7 +503,11 @@ CKEDITOR.dialog.add( 'image2', function( editor ) {
 									this.setValue( widget.data.align );
 								},
 								commit: function( widget ) {
-									widget.setData( 'align', this.getValue() );
+									var align = this.getValue();
+									if (align == null) {
+										align = 'left';
+									}
+									widget.setData( 'align', align );
 								}
 							}
 						]
