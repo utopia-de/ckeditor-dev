@@ -423,6 +423,7 @@ CKEDITOR.dialog.add( 'image2', function( editor ) {
 					},
 					{
 						id: 'alt',
+						hidden: true,
 						type: 'text',
 						label: lang.alt,
 						setup: function( widget ) {
@@ -434,6 +435,7 @@ CKEDITOR.dialog.add( 'image2', function( editor ) {
 					},
 					{
 						type: 'hbox',
+						hidden: true,
 						widths: [ '25%', '25%', '50%' ],
 						requiredContent: features.dimension.requiredContent,
 						children: [
